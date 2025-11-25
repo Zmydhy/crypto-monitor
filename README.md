@@ -14,7 +14,7 @@
 
 ## 🚀 在线演示
 
-访问: [https://muyi.66@163.com.github.io/crypto-monitor/](https://muyi.66@163.com.github.io/crypto-monitor/)
+访问: [https://Zmydhy.github.io/crypto-monitor/](https://Zmydhy.github.io/crypto-monitor/)
 
 ## 🛠️ 技术栈
 
@@ -28,7 +28,7 @@
 
 1. 克隆仓库:
 ```bash
-git clone https://github.com/muyi.66@163.com/crypto-monitor.git
+git clone https://github.com/Zmydhy/crypto-monitor.git
 cd crypto-monitor
 ```
 
@@ -44,4 +44,4 @@ MIT License
 
 ## 👤 作者
 
-GitHub: [@muyi.66@163.com](https://github.com/muyi.66@163.com)
+GitHub: [@Zmydhy](https://github.com/Zmydhy)
