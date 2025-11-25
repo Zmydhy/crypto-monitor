@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加密货币实时监控 | Crypto Monitor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">⚡</span>
+                <h1>Crypto<span class="highlight">Monitor</span></h1>
+            </div>
+            <div class="status">
+                <span class="dot"></span> 实时更新中
+            </div>
+        </header>
+
+        <main>
+            <!-- Price Cards -->
+            <section class="cards-grid">
+                <!-- Bitcoin Card -->
+                <div class="card crypto-card" id="btc-card">
+                    <div class="card-header">
+                        <div class="coin-info">
+                            <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="BTC"
+                                class="coin-icon">
+                            <div>
+                                <h2>比特币 (Bitcoin)</h2>
+                                <span class="symbol">BTC</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price-display">
+                        <span class="currency">$</span><span class="value" id="btc-price">加载中...</span>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">1小时</span>
+                            <span class="stat-value" id="btc-1h">--%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">4小时</span>
+                            <span class="stat-value" id="btc-4h">--%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">24小时</span>
+                            <span class="stat-value" id="btc-24h">--%</span>
+                        </div>
+                    </div>
+
+                    <div class="mini-chart-container">
+                        <canvas id="btc-mini-chart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Ethereum Card -->
+                <div class="card crypto-card" id="eth-card">
+                    <div class="card-header">
+                        <div class="coin-info">
+                            <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="ETH"
+                                class="coin-icon">
+                            <div>
+                                <h2>以太坊 (Ethereum)</h2>
+                                <span class="symbol">ETH</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price-display">
+                        <span class="currency">$</span><span class="value" id="eth-price">加载中...</span>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">1小时</span>
+                            <span class="stat-value" id="eth-1h">--%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">4小时</span>
+                            <span class="stat-value" id="eth-4h">--%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">24小时</span>
+                            <span class="stat-value" id="eth-24h">--%</span>
+                        </div>
+                    </div>
+
+                    <div class="mini-chart-container">
+                        <canvas id="eth-mini-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Chart Section -->
+            <section class="main-chart-section card">
+                <div class="chart-header">
+                    <h3>24小时价格走势</h3>
+                    <div class="chart-controls">
+                        <button class="active" data-coin="bitcoin">BTC</button>
+                        <button data-coin="ethereum">ETH</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="main-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- Investment Advice Section -->
+            <section class="advice-section card">
+                <h3>🤖 AI 投资建议 (Beta)</h3>
+                <div class="advice-content" id="advice-content">
+                    正在分析市场数据...
+                </div>
+            </section>
+
+            <!-- Converter Section -->
+            <section class="converter-section card">
+                <h3>汇率计算器</h3>
+                <div class="converter-grid">
+                    <div class="input-group">
+                        <label>数量</label>
+                        <input type="number" id="convert-amount" value="1">
+                    </div>
+                    <div class="input-group">
+                        <label>币种</label>
+                        <select id="convert-from">
+                            <option value="bitcoin">BTC</option>
+                            <option value="ethereum">ETH</option>
+                        </select>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="input-group">
+                        <label>美元 (USD)</label>
+                        <div class="result-box" id="convert-result-usd">$0.00</div>
+                    </div>
+                    <div class="input-group">
+                        <label>人民币 (CNY)</label>
+                        <div class="result-box" id="convert-result-cny">¥0.00</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
